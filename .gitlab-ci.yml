@@ -1,3 +1,8 @@
+stages:
+  - plan
+  - apply
+  - destroy
+
 .hidden-terraform-job:
   image:
     name: ubuntu:latest
