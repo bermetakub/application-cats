@@ -130,7 +130,7 @@ create_table:
     - cd Terraform 
     - export PGPASSWORD=$PGPASSWORD
     - echo "Creating tables..."
-    - psql -h $PGHOST -p 5432 -U $PGUSER -d $PGDATABASE -f ./modules/database/create-tables.sql
+    - psql -h $PGHOST -p 5432 -U $PGUSER -d $PGDATABASE -f ./terraform/create-tables.sql
     - kubectl create secret generic db-credentials --from-literal=database=$PGDATABASE --from-literal=hostname=$PGHOST --from-literal=password=$PGPASSWORD --from-literal=username=$PGUSER 
   when: manual
 

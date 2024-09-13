@@ -22,9 +22,3 @@ in Kubernetes folder change:
  -certificate.yaml: YOUR-DNS-NAME.online
 
 in Terraform folder define your own data in terraform.tfvars file
-
-
-values.yaml
-- YOUR-DATABASE-INSTANCE-IP 
-- YOUR-SLACK-WEBHOOK
-- YOUR-slack-channel
