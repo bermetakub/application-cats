@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: gcr.io/monitoring-433016/awesome-cats-backend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: PGHOST
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: hostname
+        - name: PGUSER
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: username
+        - name: PGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: password
+        - name: PGDATABASE
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: database
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: gcr.io/monitoring-433016/awesome-cats-frontend:latest
+        ports:
+        - containerPort: 3000
