@@ -108,6 +108,8 @@ build-push-docker-images:
 
 
 .connect-gke:
+  image:
+    name: google/cloud-sdk:latest
     entrypoint:
       - '/usr/bin/env'
       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
