@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gcr.io/monitoring-433016/awesome-cats-backend:latest
+        image: gcr.io/YOUR_PROJECT_ID/awesome-cats-backend:latest
         ports:
         - containerPort: 3000
         env:
@@ -57,6 +57,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gcr.io/monitoring-433016/awesome-cats-frontend:latest
+        image: gcr.io/YOUR_PROJECT_ID/awesome-cats-frontend:latest
         ports:
         - containerPort: 3000

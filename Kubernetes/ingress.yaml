@@ -14,7 +14,7 @@ spec:
   #   - EXAMPLE.online
   #   secretName: letsencrypt-production
   rules:
-  - host: EXAMPLE.online
+  - host: YOUR-DNS-NAME.online
     http:
       paths:
       - path: /?(.*)

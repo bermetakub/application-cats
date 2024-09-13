@@ -63,5 +63,5 @@ alertmanager:
     receivers:
       - name: slack-general
         slack_configs:
-          - channel: 'slack-channel'
+          - channel: 'YOUR-slack-channel'
             text: "{{ range .Alerts }}{{ .Annotations.summary }}\n{{ .Annotations.description }}\n\n{{ end }}"

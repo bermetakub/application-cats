@@ -10,3 +10,21 @@ PGPASSWORD
 
 ServiceAccount with owner editor roles --- key.json --- GOOGLE_CREDENTIALS
 
+in values.yaml file change:
+ -YOUR-SLACK-WEBHOOK
+ -YOUR-DATABASE-INSTANCE-IP 
+ -YOUR-slack-channel
+
+in Kubernetes folder change:
+ -deployment.yaml: YOUR_PROJECT_ID
+ -ingress.yaml: YOUR-DNS-NAME.online
+ -clusterissuer.yaml: YOUR-EMAIL@gmail.com 
+ -certificate.yaml: YOUR-DNS-NAME.online
+
+in Terraform folder define your own data in terraform.tfvars file
+
+
+values.yaml
+- YOUR-DATABASE-INSTANCE-IP 
+- YOUR-SLACK-WEBHOOK
+- YOUR-slack-channel

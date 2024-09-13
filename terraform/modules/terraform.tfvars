@@ -14,4 +14,4 @@ min_node_count = 1
 max_node_count = 3
 machine_type = "e2-medium"
 dns_zone_name = "DEMO"
-dns_name = "example.online"
+dns_name = "YOUR-DNS-NAME.online"
